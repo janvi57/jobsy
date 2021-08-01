@@ -9,23 +9,23 @@ class Header extends Component {
         return(
         <>
             
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/Timer">Timer</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/Timer">Timer</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/ClassComponent">ClassComponent</a>
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/ClassComponent">ClassComponent</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/TodoApp">TodoApp</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="/TodoApp">TodoApp</a>
                     </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/ApiClass">ApiClass</a>
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/ApiClass">ApiClass</a>
                     </li>
                     </ul>
                 </div>
