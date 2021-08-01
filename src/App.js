@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div className="container">
       <header className="row">
-                    <div className="col-sm-12 bg-info">
+                    <div className="col-sm-12">
                     <Header/>
                     </div>
                     </header>

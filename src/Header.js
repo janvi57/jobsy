@@ -7,26 +7,30 @@ class Header extends Component {
 
     render() {
         return(
-            <>
-                {/* <header className="row">
-                    <div className="col-sm-12 bg-info"> */}
-                        <h1>Header</h1>
-                        {/* <Navbar bg="primary" variant="dark">
-                        <Container>
-                        <Nav className="me-auto">
-                        <Nav.Link href="#Home">Home</Nav.Link>
-                        <Nav.Link href="#TodoApp">Features</Nav.Link>
-                        <Nav.Link href="#ApiClass">Pricing</Nav.Link>
-                        <Nav.Link href="#Timer">Home</Nav.Link>
-                        <Nav.Link href="#ClassComponent">Features</Nav.Link>
-                        <Nav.Link href="#ApiClass">Pricing</Nav.Link>
-                        </Nav>
-                        </Container>
-                    </Navbar> */}
-{/* 
-                    </div>
-                </header> */}
-            </>
+        <>
+            
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Timer">Timer</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ClassComponent">ClassComponent</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/TodoApp">TodoApp</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/ApiClass">ApiClass</a>
+                    </li>
+                    </ul>
+                </div>
+                </nav>
+        </>
         );
     }
 }
