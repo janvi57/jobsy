@@ -1,89 +1,43 @@
-import React, { Component } from 'react';
-import viewItems from './viewItems';
+import React, { Component } from 'react'
 
-class TodoApp extends Component {
-    constructor() {
-        super();
-        this.state = {
-            list : [],
-            userInput : {
-                    text: '',
-                    key: ''
-                },
-        }
-    this.addItem = this.addItem.bind(this);
-    this.updateInput = this.updateInput.bind(this);
-    this.deleteItem = this.deleteItem.bind(this);
+class TodoApp extends Component{
+    constructor(){
+    super()
+    this.state = {arr:[]} 
     }
 
-    updateInput = (val) => {
-        this.setState({
-            userInput: {
-                text: val.target.value,
-                key: Math.random()
-            }
-        })
+
+    add = () =>{
+        var val = this.val //getting the final (Onchange) input from the field
+        this.setState({arr:this.state.arr.concat(val.target.value)})
     }
 
-    addItem = (e) => {
-        e.preventDefault();
-        const v=this.state.userInput;
-        if(v.text!=='') {
-            const list = [...this.state.list,v];
-            // list.push(userInput);
-
-            this.setState({
-                list: list,
-                userInput: {
-                        text: '',
-                        key: ''
-                    }
-            });
-        }
+    remove = (i) => () =>{
+        this.state.arr.splice(i,1) 
+        this.setState({arr:this.state.arr})
     }
 
-    deleteItem(key) {
-       // const list = [...this.state.list];
-        const updateList = this.state.list.filter(item => item.key!==key);
-        this.setState({
-            list: updateList,
-        });
-    }
-
-    // ListItems = (e) => {
-    //     const items = e.items;
-    //     const LsItems = items.map(item => {
-    //         return <div className='dig'>
-    //             <p>
-    //                 <input type='text' id={item.key} value={item.text}></input>
-    //                 <span>
-    //                     <button onClick={() => {
-    //                         e.deleteItem(item.key)
-    //                     }}>X</button>
-    //                 </span>
-    //             </p>
-    //         </div>
-    //     })
-    //     return <div>
-    //         {LsItems}
-    //     </div>
-    // }
-
-    render() {
+    render(){
         return(
-            <>
-                <h3>Todos List</h3>
-               
-               <form onSubmit={this.addItem}>
-                <input type='text' placeholder='Enter todos' value={this.state.userInput.text} onChange={this.updateInput}></input>
-                <button type='submit'>Add</button>
-                </form>
-                <h5>{this.state.list.text}</h5>
-                {/* <ListItems items={this.state.items} deleteItem={this.deleteItem}/> */}
-                <viewItems items={this.state.items} deleteItem={this.deleteItem}  />
-            </>
-        );
+        <>
+        <h1>T O ~ D O</h1>
+        <input type="text" onChange={a => this.val = a}></input>
+        <button onClick={this.add}>Add task</button>    
+        <ul>
+            {this.state.arr.map((e)=>(
+                <li style={{listStyleType:'none'}}>
+                    {e}     
+                <>
+                <button onClick={this.remove(this.state.arr.indexOf(e))}>X</button>
+                </>
+                </li> 
+            ))}
+        </ul>    
+        </>)
+        
     }
+
+
 }
 
-export default TodoApp;
+export default TodoApp
