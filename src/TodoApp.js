@@ -3,32 +3,34 @@ import React, { Component } from 'react'
 class TodoApp extends Component{
     constructor(){
     super()
-    this.state = {arr:[]} 
+    this.state = {
+        userInput:[]
+    } 
     }
 
 
     add = () =>{
-        var val = this.val //getting the final (Onchange) input from the field
-        this.setState({arr:this.state.arr.concat(val.target.value)})
+        let inp = this.inp 
+        this.setState({userInput:this.state.userInput.concat(inp.target.value)})
     }
 
     remove = (i) => () =>{
-        this.state.arr.splice(i,1) 
-        this.setState({arr:this.state.arr})
+        this.state.userInput.splice(i,1) 
+        this.setState({userInput:this.state.userInput})
     }
 
     render(){
         return(
         <>
-        <h1>T O ~ D O</h1>
-        <input type="text" onChange={a => this.val = a}></input>
+        <h1>TodoApp</h1>
+        <input type="text" onChange={a => this.inp = a}></input>
         <button onClick={this.add}>Add task</button>    
         <ul>
-            {this.state.arr.map((e)=>(
-                <li style={{listStyleType:'none'}}>
+            {this.state.userInput.map((e)=>(
+                <li>
                     {e}     
                 <>
-                <button onClick={this.remove(this.state.arr.indexOf(e))}>X</button>
+                <button onClick={this.remove(this.state.userInput.indexOf(e))}>X</button>
                 </>
                 </li> 
             ))}
