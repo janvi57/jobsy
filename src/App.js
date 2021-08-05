@@ -8,6 +8,7 @@ import Timer from './Timer';
 import Home from './Home';
 import Header  from './Header';
 import Footer from './Footer';
+import FunctionalComponent from './FunctionalComponent';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
       <Route exact path="/ApiClass" component={ApiClass} />
       <Route exact path="/TodoApp" component={TodoApp} />
       <Route exact path="/ClassComponent" component={ClassComponent} />
+      <Route exact path="/FunctionalComponent" component={FunctionalComponent} />
       </Switch>
         </div>
         </main>

@@ -27,6 +27,9 @@ class Header extends Component {
                     <li className="nav-item active">
                         <a className="nav-link" href="/ApiClass">ApiClass</a>
                     </li>
+                    <li className="nav-item active">
+                        <a className="nav-link" href="/FunctionalComponent">FunctionalComponent</a>
+                    </li>
                     </ul>
                 </div>
                 </nav>
